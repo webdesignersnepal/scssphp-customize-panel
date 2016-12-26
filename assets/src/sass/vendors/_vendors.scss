@@ -1,0 +1,10 @@
+//font awesome
+@import '../../../../node_modules/font-awesome/scss/font-awesome.scss';  
+
+.container-fluid {
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  @include clearfix();
+}

@@ -1,0 +1,42 @@
+%ul-float{
+    list-style: none;
+    margin:0;
+    padding:0;
+    @include clearfix();
+}
+
+//common grid properties
+%cgp{  
+    position:relative;
+    padding-left:7.5px;
+    padding-right:7.5px;
+    min-height: 1px;
+    float:left;
+}
+
+//CENTER ELEMENT
+%center-ele{ 
+    position:absolute;
+    top:50%;
+    left:50%;
+    @include translate(-50%, -50%);
+}
+
+//RESET UL LI
+%reset-li-fr{
+    li{
+        list-style:none;
+        float:left;
+    }
+}
+
+//RESET BUTTON
+%reset-btn{
+    background-color:transparent;
+    border:none;
+    @include box-shadow(none);
+
+    &:focus, &:active{
+        outline:none;
+    }
+}

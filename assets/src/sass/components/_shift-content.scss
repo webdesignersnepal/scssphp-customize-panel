@@ -1,0 +1,109 @@
+ $sc-animation-type:shift; //op  tions overlay or shift
+ $sc-direction:right !default; //for overlay right,left,top and bottom     For shift top,left and right
+ $sc-overlay:yes; //options yes or no
+ $sc-duration:0.3s;
+ $sc-effect:ease-in-out;  
+ $sc-width:350px;   
+ $menu-side:left;
+
+//fixed header condition
+$fixed-header-width:60;
+$fixed-header-selector: 'header.ds-main-header';
+
+//null variable declear
+$sc-shift-direction:null;
+
+//null variable declear
+$sc-shift-direction:null;
+
+body{
+    position:relative;    
+    left:0;
+    right:0;
+}
+  
+// ds-overlay
+.ds-overlay{  
+    @if($sc-animation-type == shift){
+        position:absolute;
+    }@else if($sc-animation-type == overlay){
+        position: fixed;        
+    }
+    background-color:rgba($black, 0.6);     
+    left:0;
+    width:100%;
+    top:0;
+    height:100%;
+    z-index:9; 
+    opacity: 0;
+    visibility: hidden;
+    @include transition( all $sc-duration $sc-effect );
+
+    &.open{
+        @if($sc-overlay == yes){
+            visibility: visible;
+            opacity: 1;
+        }@else{
+            visibility:hidden;
+            opacity:0;
+        }
+    }
+
+} //.ds-overlay
+
+//Menu open animation effects
+body, #{$fixed-header-selector}{
+    @include transition(all $sc-duration $sc-effect);
+}
+//for stop scroll body
+body.open{
+        overflow:hidden;
+}
+
+@if( $sc-animation-type == shift){
+    body.open{
+
+        @if($sc-direction == right) and ($sc-animation-type == shift){
+            right: $sc-width;  
+            left:-$sc-width;
+        }@else if($sc-direction == left) and ($sc-animation-type == shift){
+            right: -$sc-width;  
+            left:$sc-width;
+        }@else if($sc-direction == top) and ($sc-animation-type == shift){
+            padding-top: $fixed-header-width + $sc-width;  
+        }
+
+        header.ds-main-header{
+            #{$sc-direction}:$sc-width !important; 
+
+            @if($sc-direction == right) and ($sc-animation-type == shift){
+                left:-$sc-width;
+            } 
+        }
+
+    }//End body
+    
+} //End else
+
+//menu area
+.ds-sc-board{
+    position: fixed;
+
+    @if($sc-direction == left) or ($sc-direction == right){
+        top: 0;
+        bottom: 0;
+        width: $sc-width;
+    }@else if($sc-direction == top) or ($sc-direction == bottom){
+        left: 0;
+        right: 0;
+        height: $sc-width;
+    }
+    #{$sc-direction}: -$sc-width;
+    z-index: 10;
+    background-color: lighten($black,97%);
+    @include transition( all $sc-duration $sc-effect );
+
+    &.open{
+        #{$sc-direction}:0;
+    }
+}

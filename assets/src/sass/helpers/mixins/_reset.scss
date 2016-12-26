@@ -1,0 +1,46 @@
+// BROWSER RESET 
+@mixin reset(){  
+    *{
+        margin:0;
+        padding:0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; 
+        font-family: $primary-font;
+    }
+    body{
+        background-color:$body-color;
+    }
+
+    a{
+        color:inherit;
+        &:hover, &:active, &:focus, &:visited
+            {
+            text-decoration:none;
+            color:inherit;
+            outline:none;
+        }
+    }
+    ul{
+        margin:0;
+        paddin:0;
+    }
+    input[type='text'], .form-control{
+        border:none;
+        outline: none;
+        box-shadow:none;
+    }
+    input[type='text']:focus, .form-control:focus{
+        border:none;
+        outline: none;
+        box-shadow:none;
+    }
+    h1,h2,h3,h4,h5,h6,p{
+        margin:0;
+        padding:0;
+        color:inherit;
+    }
+    .form-control{
+        border-radius: 0px;
+    }
+}// reset browser 

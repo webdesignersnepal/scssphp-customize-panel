@@ -1,0 +1,31 @@
+//KEY FRAME
+@mixin animation($animation){
+    -webkit-animation:$animation;
+    -o-animation:$animation;
+    -o-animation:$animation;
+    animation:$animation;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+// KEY FRAME PLAY STATE
+@mixin animation-play-state ($state)
+{
+    -webkit-animation-play-state: $state;
+    -moz-animation-play-state: $state;
+    -o-animation-play-state: $state;
+    animation-play-state: $state;
+}
+

@@ -1,0 +1,16 @@
+.ds-col-md-one-5{
+    width:20%;
+    @extend %cgp;
+}
+
+.ds-row{
+    margin-left: -7.5px;
+    margin-right:-7.5px;
+    @include clearfix();
+}
+
+.ds-img-responsive{ 
+    max-width:100%;
+    display: inline-block;
+    height:auto;
+}

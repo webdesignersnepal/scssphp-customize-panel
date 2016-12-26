@@ -1,0 +1,19 @@
+//COMPASS
+//@import "compass/css3";
+
+@import "helpers/_helpers.scss";
+@import "base/_reset.scss";
+@import "base/_typography.scss";
+@import "components/_components.scss";
+@import "layouts/_layouts.scss";  
+
+//Bootstrap
+@import "vendors/vendors.scss";
+
+  
+//temp style
+body{
+    background-color:#EBEFF1; 
+    overflow: hidden;
+    @include box-shadow(red 2px 2px 10px);
+}

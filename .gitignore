@@ -1,0 +1,7 @@
+*node_modules/
+assets/dist
+assets/src/css
+.sass-cache
+.c9
+bnproject
+/nbproject/private/

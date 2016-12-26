@@ -1,0 +1,46 @@
+.form-group{
+	position:relative;
+
+	label{
+		display: block;
+	    margin-bottom: 5px;
+	    position: absolute;
+	    background: darken($primary-color, 5%);
+	    top: -10px;
+	    left:15px;
+	    color:darken($primary-color, 15%);
+	    font-size: 14px;
+	    text-transform:capitalize;
+	    @include transition(all 0.2s ease-in-out);
+	}
+	input{
+		width: 100%;
+	    padding: 10px 12px;
+	    background: transparent;
+	    border:1px solid darken($primary-color, 15%);
+	    color: $white;
+	    font-size:12px;
+	    @include transition(all 0.3s ease-in-out);
+
+	    &:active, &:visited{
+	    	border:1px solid $white;
+	    	outline:none;
+	    }
+	    &:focus{
+	    	border: 1px solid $white;
+	    	outline:none;
+	    	
+
+	    	+ label{
+	   			left: 7px;
+	   			 color: $white;
+	   			@include transition(all 0.4s ease-in-out);
+	    	}
+	    }
+
+	    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: $white;
+		}
+	}
+
+}

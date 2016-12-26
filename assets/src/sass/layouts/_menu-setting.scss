@@ -1,0 +1,52 @@
+
+
+@if($sc-direction == right){
+	$menu-side:left;
+}@else{
+	$menu-side:right;
+}
+
+.menu-panel{
+	width: 300px;
+    background: darken($primary-color, 5%);
+    padding: 20px;
+    position: fixed;
+    #{$menu-side}: -300px;
+    top:50%;
+    z-index:999;
+    @include translate(0, -50%);
+    @include transition(all 0.3s ease-in-out);
+
+    &.open{
+        #{$menu-side}: 0;
+    }
+
+   .inner-wraper{
+    position:relative;
+
+        .setting-icon{
+            position: absolute;
+            #{$sc-direction}: -71px;
+            background: #3bcfa7;
+            padding: 7px 5px;
+            color: #fff;
+            cursor:pointer;
+        }
+
+        h1{
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group{
+            margin-bottom:20px;
+            label{
+                display:block;
+                margin-bottom:5px;
+            }
+        }
+   }
+}
